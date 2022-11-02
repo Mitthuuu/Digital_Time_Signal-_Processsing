@@ -1,0 +1,37 @@
+clc;
+clear;
+close;
+a = 0.8;
+w = 0:0.01:2*%pi;
+// First Order Syatem
+m1 = sqrt(1-2*a*cos(w)+a^2)^-1;
+p1 = atan((-a*sin(w)),(1-a*cos(w)));
+disp(abs(m1));
+figure(1);
+plot(w,m1);
+title("Magnitude Response of First Order System");
+xlabel('frequency');
+ylabel('|H(e^(jw))|');
+xgrid(1);
+disp(abs(p1));
+figure(2);
+plot(w,p1);
+title("Phase Response of First Order System");
+xlabel('frequency');
+ylabel('phase');
+// Second Order System
+m2 = cos(w);
+p2 = atan((-sin(2*w)),(1+cos(2*w)));
+disp(abs(m2));
+figure(3);
+plot(w,m2);
+title("Magnitude Response of Second Order System");
+xlabel('frequency');
+ylabel('|H(e^(jw))|');
+xgrid(1);
+disp(abs(p2));
+figure(4);
+plot(w,p2);
+title("Phase Response of Second Order System");
+xlabel('frequency');
+ylabel('phase');
